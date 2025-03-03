@@ -2,7 +2,8 @@ import requests
 import streamlit as st
 
 dify_api_key = st.secrets["DIFY_API_KEY"]
-url = 'https://api.dify.ai/v1/chat-messages'
+url = '
+'
 
 st.title('カラスのお悩み相談室')
 
@@ -42,7 +43,7 @@ with st.chat_message("assistant"):
     }
 
 try:
-    response = requests.post(url, headers=headers, json=payload)
+    response = requests.get(url, headers=headers, json=payload)
     response.raise_for_status()
 
     response_data = response.json()
