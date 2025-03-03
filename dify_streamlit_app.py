@@ -42,7 +42,7 @@ with st.chat_message("assistant"):
     }
 
 try:
-    response = requests.get(url, headers=headers, json=payload)
+    response = requests.post(url, headers=headers, json=payload)
     response.raise_for_status()
 
     response_data = response.json()
