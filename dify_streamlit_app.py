@@ -38,7 +38,7 @@ with st.chat_message("assistant"):
     payload = {
         "inputs": {},
         "query": user_input,
-        "response_mode": "blocking",
+        "response_mode": "streaming",
         "conversation_id": st.session_state.conversation_id,
         "user": "alex-123",
         "files": []
