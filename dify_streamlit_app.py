@@ -59,6 +59,9 @@ try:
 except requests.exceptions.RequestException as e:
     logging.error(f"An error occurred: {e}", exc_info=True)
     st.error(f"An error occurred: {e}")
+    if e.response is not None:
+        st.error(f"Response status code: {e.response.status_code}")
+        st.error(f"Response content: {e.response.content.decode()}")
     full_response = "An error occurred while fetching the response."
 
 message_placeholder.markdown(full_response)
