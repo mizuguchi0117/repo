@@ -46,7 +46,7 @@ with st.chat_message("assistant"):
     }
 
 try:
-    response = requests.post(url, headers=headers, json=json.dumps(payload))  # Ensure POST is the correct method
+    response = requests.post(url, headers=headers, data=json.dumps(payload))  # Ensure POST is the correct method
     response.raise_for_status()
 
     response_data = response.json()
