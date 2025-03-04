@@ -6,7 +6,7 @@ import json
 logging.basicConfig(level=logging.ERROR)
 
 dify_api_key = st.secrets["DIFY_API_KEY"]
-url = 'https://api.dify.ai/v1/chat-messages'
+url = 'http://api.dify.ai/v1/chat-messages'
 
 st.title('カラスのお悩み相談室')
 
@@ -38,7 +38,7 @@ with st.chat_message("assistant"):
 
     payload = {
         "inputs": {"text": user_input},
-        "query": user_input if user_input else "default query",
+        "query": user_input or "default query",
         "response_mode": "streaming",
         "conversation_id": st.session_state.conversation_id,
         "user": "alex-123",
